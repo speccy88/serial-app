@@ -1,0 +1,20 @@
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+body{margin:0;display:flex;flex-direction:column;height:100vh}
+header{padding:10px;background:#f3f4f6;border-bottom:1px solid #ddd}
+.conn{display:flex;align-items:center;gap:8px}
+main{padding:10px;flex:1;display:flex;flex-direction:column}
+.tabs{display:flex;gap:4px;margin-bottom:8px}
+.tab{padding:6px 10px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.tab.active{background:#e8f0fe}
+.editors{flex:1;display:flex}
+.editor{flex:1;border:1px solid #ccc;padding:8px;overflow:auto;white-space:pre-wrap;font-family:monospace;border-radius:4px}
+.editor:not(.active){display:none}
+.editor{resize:vertical}
+.controls{display:flex;gap:8px;margin:8px 0}
+.controls button{padding:6px 10px}
+.status-message{height:24px;padding:4px 8px;border:1px solid #ddd;background:#fff;margin-bottom:8px}
+.output-label{font-weight:600;margin-bottom:4px}
+.output{height:160px;resize:vertical;border:1px solid #ccc;padding:8px;font-family:monospace}
+.current-line{background:#fff2a8}
+#conn-status.status.connected{color:green}
+#conn-status.status.disconnected{color:red}

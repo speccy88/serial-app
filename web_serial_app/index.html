@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Serial Web App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Serial Web App</h1>
+    <div class="conn">
+      <label>Port:</label>
+      <button id="btn-request-port">Select Port</button>
+      <label>Baud:</label>
+      <select id="baud-select">
+        <option>9600</option>
+        <option>19200</option>
+        <option>38400</option>
+        <option>57600</option>
+        <option selected>115200</option>
+      </select>
+      <button id="btn-connect">Connect</button>
+      <span id="conn-status" class="status disconnected">Disconnected</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab active" data-tab="normal">Normal mode</button>
+      <button class="tab" data-tab="berry">Berry mode</button>
+    </div>
+
+    <div class="editors">
+      <textarea id="editor-normal" class="editor active" spellcheck="false"></textarea>
+      <textarea id="editor-berry" class="editor" spellcheck="false"></textarea>
+    </div>
+
+    <div class="controls">
+      <button id="btn-clear">Clear Text</button>
+      <button id="btn-send-line">Send Selected Line (Ctrl+Enter)</button>
+      <button id="btn-send-all">Send All Lines (Ctrl+Shift+A)</button>
+      <button id="btn-open">Open File (Ctrl+O)</button>
+      <input id="file-input" type="file" accept="text/*" style="display:none">
+    </div>
+
+    <div class="status-message" id="status-message">Ready</div>
+
+    <label class="output-label">Serial Output</label>
+    <textarea id="serial-output" class="output" readonly></textarea>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
